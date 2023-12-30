@@ -3,7 +3,7 @@ import React from "react";
 const HomePage = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      window.location.href = "/LogIn";
+      window.location.href = "/Gallery";
     }, 3000);
 
     return () => clearTimeout(timeoutId);

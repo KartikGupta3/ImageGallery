@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./Components/Login";
-import SingUp from "./Components/SingUp";
 import HomePage from "./Components/HomePage";
+import Gallery from "./Components/Gallery";
+import ImageUpload from "./Components/ImageUpload";
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<HomePage />} />
-        <Route path="/LogIn" element={<Login />} />
-        <Route path="/SignUp" element={<SingUp />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="Gallery" element={<Gallery />} />
+        <Route path="ImageUpload" element={<ImageUpload />} />
       </Routes>
     </Router>
   );
