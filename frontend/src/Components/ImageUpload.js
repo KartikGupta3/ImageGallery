@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import Nav from "./nav";
-
+import axios from "axios";
 function ImageUpload() {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
   };
 
-  const handleUpload = () => {
-    console.log("File uploaded:", selectedFile);
+  const handleUpload = async () => {
+    const formdata = new FormData();
+    formdata.append("file", selectedFile);
+    console.log(selectedFile);
+    try {
+      const response = await axios.post("http://localhost:3001/upload", formdata);
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
